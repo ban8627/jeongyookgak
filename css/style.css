@@ -1,0 +1,380 @@
+@charset 'utf-8';
+@import url('fonts/fonts.css');
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline-style: none; */
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Spoqa Han Sans, "Sans-serif";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.32px;
+}
+
+
+/* common */
+.inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 1184px;
+  margin: 0 auto;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* all layout */
+.wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* top ad */
+.topad {
+  position: relative;
+  display: block;
+  background: radial-gradient(circle at 50% 527%, #ff896a, #e23000 119%);
+}
+
+.topad .inner {
+  position: relative;
+  display: block;
+  background: url('../images/adpop.png') no-repeat center;
+  background-size: cover;
+}
+
+.topad .inner .adclose {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  float: right;
+  text-indent: -9999px;
+}
+
+/* header */
+.header {
+  position: relative;
+  display: block;
+  background: #000;
+}
+
+.header .inner {
+  position: relative;
+  display: block;
+  padding: 24px 0;
+}
+
+.header .inner>div {
+  position: relative;
+  display: block;
+}
+
+.header .inner .logo {
+  position: relative;
+  display: block;
+  width: 129px;
+  height: 48px;
+  background: url('../images/logo.svg') no-repeat center;
+  background-size: cover;
+  text-indent: -9999px;
+  float: left;
+}
+
+.header .inner .gnb {
+  position: relative;
+  display: block;
+  float: left;
+  margin-left: 34px;
+  margin-top: 16px;
+}
+
+.header .inner .gnb li {
+  position: relative;
+  display: block;
+  float: left;
+  padding: 0 5px;
+  margin-right: 14px;
+}
+
+.header .inner .gnb li:last-child {
+  margin-right: 0;
+}
+
+.header .inner .gnb li a {
+  position: relative;
+  display: block;
+  font-size: 18px;
+  color: #fff;
+}
+
+.header .inner .header-right {
+  position: relative;
+  display: block;
+  padding: 18px 0;
+}
+
+.header .inner .customer-area {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.header .inner .customer-area>li {
+  position: relative;
+  display: block;
+  float: left;
+  margin-left: 12px;
+}
+
+.header .inner .customer-area>li:first-child {
+  margin-left: 0;
+}
+
+.header .inner .customer-area>li a {
+  position: relative;
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 1px;
+  height: 12px;
+  margin: 0 20px;
+  background: #fff;
+}
+
+.header .inner .member-area {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.header .inner .member-area>li {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.header .inner>.header-right>a {
+  position: relative;
+  display: block;
+  width: 48px;
+  height: 48px;
+  float: left;
+  text-indent: -9999px;
+}
+
+.header-cart {
+  background: url('../images/cart.svg') no-repeat center;
+  background-size: cover;
+}
+
+.header-menu {
+  background: url('../images/side-menu.svg') no-repeat center;
+  background-size: cover;
+}
+
+/* visual */
+.visual {
+  position: relative;
+  display: block;
+  height: 560px;
+  background: url('../images/main_firstgift_logout.29ecc8b.png') no-repeat center;
+  background-size: cover;
+}
+
+/* notice banner */
+.notice {
+  position: relative;
+  display: block;
+  margin-top: 48px;
+}
+
+/* .notice .inner {} */
+.notice .inner>div {
+  position: relative;
+  display: block;
+}
+
+.notice .inner .notice-left {
+  position: relative;
+  display: block;
+  width: 48%;
+}
+
+.sw-notice {
+  width: 100%;
+  height: 100%;
+}
+
+.notice .inner .swiper-slide a {
+  position: relative;
+  display: block;
+  height: 176px;
+  background-size: cover;
+}
+
+.notice-01 {
+  background: url('../images/202206_event_summer-pc-banner-2.png') no-repeat center;
+}
+
+.notice-02 {
+  background: url('../images/2022.05_pricing_PC2202_05_pricing.png') no-repeat center;
+}
+
+.notice-03 {
+  background: url('../images/2021.11_quick_delivery_expansion_PC.png') no-repeat center;
+}
+
+.notice-04 {
+  background: url('../images/notice04.png') no-repeat center;
+}
+
+.notice-05 {
+  background: url('../images/202202_event_applaunching-pc-banner.png') no-repeat center;
+}
+
+.notice-06 {
+  background: url('../images/202201_event_review-pc-banner.png.png') no-repeat center;
+}
+
+.notice-07 {
+  background: url('../images/baby-giftcube-mainbanner-pc.png') no-repeat center;
+}
+
+/* notice swiper control */
+.notice-control {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 103px;
+  z-index: 99;
+  border: 1px solid #eaeaea;
+  background: #fff;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.notice-control button {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 16px;
+  line-height: 16px;
+  background: url('../images/arrow.svg') no-repeat center;
+  background-size: cover;
+  border: 0;
+  font-size: 0;
+}
+
+.notice-control .sw-prev {
+  left: 10px;
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+.notice-control .sw-next {
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.notice-control .notice-pagination {
+  text-align: center;
+  font-size: 13px;
+}
+
+.swiper-pagination-current {
+  font-weight: bold;
+}
+
+.notice .inner .notice-right {
+  position: relative;
+  display: block;
+  width: 52%;
+}
+
+.notice-right a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 176px;
+  background: url('../images/freshplan.9fe4775.png') no-repeat center;
+}
+
+/* best product */
+.product {
+  position: relative;
+  display: block;
+  margin-top: 80px;
+}
+
+.product .inner h2 {
+  position: relative;
+  display: block;
+  font-size: 32px;
+}
+.product .product-con {
+  position: relative;
+  display: block;
+  margin-top:32px;
+}
+.product-con li {
+  position: relative;
+  display: block;
+  float:left;
+  margin-right:28px;
+}
+.product-con li:nth-child(3n) {
+  margin-right:0;
+}
+.product-con .product-list {
+  position: relative;
+  display: block;
+  background: #f9f7f8;
+}
+/* more banner */
+
+/* footer */
