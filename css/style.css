@@ -1,4 +1,4 @@
-@charset 'utf-8';
+@charset "UTF-8";
 @import url('fonts/fonts.css');
 
 /* reset */
@@ -33,7 +33,7 @@ body {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.6;
-  letter-spacing: -0.32px;
+  letter-spacing: 1;
 }
 
 
@@ -56,9 +56,41 @@ body {
 
 .clearfix::after {
   content: '';
+  position: relative;
   display: block;
   clear: both;
 }
+
+
+/* top ad */
+.top-ad {
+  position: relative;
+  display: block;
+  background: radial-gradient(circle at 50% 527%, #ff896a, #e23000 119%);
+}
+
+/* .top-ad .inner {} */
+.top-ad .inner .first-buy {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 60px;
+  background: url('../images/adpop.png') no-repeat center;
+  background-size: cover;
+  text-indent: -9999px;
+}
+
+.top-ad .inner .ad-close {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 60px;
+  line-height: 60px;
+  text-indent: -9999px;
+}
+
 
 /* all layout */
 .wrap {
@@ -68,43 +100,23 @@ body {
   height: 100%;
 }
 
-/* top ad */
-.topad {
-  position: relative;
-  display: block;
-  background: radial-gradient(circle at 50% 527%, #ff896a, #e23000 119%);
-}
-
-.topad .inner {
-  position: relative;
-  display: block;
-  background: url('../images/adpop.png') no-repeat center;
-  background-size: cover;
-}
-
-.topad .inner .adclose {
-  position: relative;
-  display: block;
-  width: 60px;
-  height: 60px;
-  float: right;
-  text-indent: -9999px;
-}
 
 /* header */
 .header {
-  position: relative;
+  position: sticky;
+  left: 0;
+  top: 0;
   display: block;
+  width: 100%;
   background: #000;
+  z-index: 10;
 }
 
 .header .inner {
-  position: relative;
-  display: block;
   padding: 24px 0;
 }
 
-.header .inner>div {
+.header .header-left {
   position: relative;
   display: block;
 }
@@ -144,19 +156,21 @@ body {
   position: relative;
   display: block;
   font-size: 18px;
+  line-height: 18px;
   color: #fff;
 }
 
 .header .inner .header-right {
   position: relative;
   display: block;
-  padding: 18px 0;
+  line-height: 18px;
 }
 
 .header .inner .customer-area {
   position: relative;
   display: block;
   float: left;
+  margin-top: 18px;
 }
 
 .header .inner .customer-area>li {
@@ -174,15 +188,17 @@ body {
   position: relative;
   display: block;
   font-size: 14px;
-  line-height: 18px;
+  /* line-height: 18px; */
+  color: #fff;
 }
 
 .bar {
   position: relative;
   display: block;
+  float: left;
   width: 1px;
   height: 12px;
-  margin: 0 20px;
+  margin: 22px 20px 0;
   background: #fff;
 }
 
@@ -190,12 +206,27 @@ body {
   position: relative;
   display: block;
   float: left;
+  margin-top: 18px;
+  margin-right: 24px;
 }
 
 .header .inner .member-area>li {
   position: relative;
   display: block;
   float: left;
+  margin-left: 12px;
+}
+
+.header .inner .member-area>li:first-child {
+  margin-left: 0;
+}
+
+.header .inner .member-area>li a {
+  position: relative;
+  display: block;
+  font-size: 14px;
+  /* line-height: 18px; */
+  color: #fff;
 }
 
 .header .inner>.header-right>a {
@@ -212,7 +243,8 @@ body {
   background-size: cover;
 }
 
-.header-menu {
+.header-side-menu {
+  margin-left: 8px;
   background: url('../images/side-menu.svg') no-repeat center;
   background-size: cover;
 }
@@ -258,32 +290,29 @@ body {
 }
 
 .notice-01 {
-  background: url('../images/202206_event_summer-pc-banner-2.png') no-repeat center;
-}
-
-.notice-02 {
   background: url('../images/2022.05_pricing_PC2202_05_pricing.png') no-repeat center;
 }
 
-.notice-03 {
+.notice-02 {
   background: url('../images/2021.11_quick_delivery_expansion_PC.png') no-repeat center;
 }
 
-.notice-04 {
+.notice-03 {
   background: url('../images/notice04.png') no-repeat center;
 }
 
-.notice-05 {
+.notice-04 {
   background: url('../images/202202_event_applaunching-pc-banner.png') no-repeat center;
 }
 
-.notice-06 {
-  background: url('../images/202201_event_review-pc-banner.png.png') no-repeat center;
+.notice-05 {
+  background: url('../images/202201_event_review-pc-banner.png') no-repeat center;
 }
 
-.notice-07 {
+.notice-06 {
   background: url('../images/baby-giftcube-mainbanner-pc.png') no-repeat center;
 }
+
 
 /* notice swiper control */
 .notice-control {
@@ -292,6 +321,7 @@ body {
   bottom: 0;
   display: block;
   width: 103px;
+  height: 30px;
   z-index: 99;
   border: 1px solid #eaeaea;
   background: #fff;
@@ -309,6 +339,7 @@ body {
   background-size: cover;
   border: 0;
   font-size: 0;
+  opacity: .3;
 }
 
 .notice-control .sw-prev {
@@ -321,9 +352,14 @@ body {
   transform: translateY(-50%);
 }
 
+.notice-control .btn-active {
+  opacity: 1;
+}
+
 .notice-control .notice-pagination {
   text-align: center;
   font-size: 13px;
+  line-height: 10px;
 }
 
 .swiper-pagination-current {
@@ -336,7 +372,7 @@ body {
   width: 52%;
 }
 
-.notice-right a {
+.coupon-event-free {
   position: relative;
   display: block;
   width: 100%;
@@ -355,26 +391,302 @@ body {
   position: relative;
   display: block;
   font-size: 32px;
+  font-weight: 700;
 }
+
 .product .product-con {
   position: relative;
   display: block;
-  margin-top:32px;
+  margin-top: 32px;
+  width: 100%;
+  height: 100%;
 }
+
 .product-con li {
   position: relative;
   display: block;
-  float:left;
-  margin-right:28px;
+  float: left;
+  margin-right: 28px;
+  margin-bottom: 61px;
 }
+
 .product-con li:nth-child(3n) {
-  margin-right:0;
+  margin-right: 0;
 }
+
 .product-con .product-list {
   position: relative;
   display: block;
+  width: 376px;
+  padding: 70px 50px;
   background: #f9f7f8;
 }
-/* more banner */
+
+.product-con .non-anti {
+  background: #f9f7f8 url('../images/none.svg') no-repeat 16px 16px;
+}
+
+.product-con .product-list a {
+  position: relative;
+  display: block;
+}
+
+.product-con .product-list a img {
+  width: 100%;
+}
+
+.go-cart {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  display: block;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #fff url('../images/go_cart_b.svg') no-repeat center;
+  border: 2px solid #eee;
+  box-shadow: 0 25px 10px -15px rgba(0, 0, 0, .1);
+}
+
+.go-cart:hover {
+  background: #212121 url('../images/go_cart_w.svg') no-repeat center;
+  border: 2px solid #212121;
+}
+
+.product-title {
+  position: relative;
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.product-value {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  color: #9b9b9b;
+  cursor: pointer;
+}
+
+/* contain banner */
+.contain-banner {
+  position: relative;
+  display: block;
+  margin-top: 33px;
+}
+
+.contain-banner .inner {}
+
+.contain-banner .cb-banner {
+  position: relative;
+  display: block;
+}
+
+.contain-banner .cb-banner img {
+  position: relative;
+  width: 100%;
+}
 
 /* footer */
+.footer {
+  position: relative;
+  display: block;
+  margin-top: 150px;
+  border-top: 1px solid #bdbdbd;
+}
+
+.footer-top {
+  position: relative;
+  display: block;
+  padding: 11px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.footer-top .inner {}
+
+.company-law {
+  position: relative;
+  display: block;
+}
+
+.company-law li {
+  position: relative;
+  display: block;
+  margin-right: 23px;
+  float: left;
+}
+
+.company-law li a {
+  position: relative;
+  display: block;
+  color: #000;
+  font-size: 14px;
+  line-height: 40px;
+}
+
+.company-law li a b {
+  font-weight: 700;
+}
+
+.app-icons {
+  position: relative;
+  display: block;
+}
+
+.app-icons a {
+  position: relative;
+  display: inline-block;
+}
+
+.jyg-apps {
+  width: 128px;
+  height: 40px;
+  font-size: 13px;
+  color: #212121;
+  letter-spacing: -.41px;
+  line-height: 20px;
+  background: #fafafa url('../images/phone.svg') no-repeat 12.8px center;
+  padding: 10px 15px;
+  padding-left: 38px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-right: 25px;
+}
+
+.kakao-icon {
+  background: url('../images/kakao.svg') no-repeat center;
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+  text-indent: -9999px;
+}
+
+.ins-icon {
+  background: url('../images/ins.svg') no-repeat center;
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+  text-indent: -9999px;
+}
+
+.footer-bottom {
+  position: relative;
+  display: block;
+  padding-bottom:10px;
+}
+
+.footer-bottom .inner {
+  padding: 8px 0;
+}
+
+.company-info {
+  position: relative;
+  display: block;
+  margin-top: 16px;
+}
+
+.company-info .f-logo {
+  position: relative;
+  display: block;
+  width: 82px;
+  height: 32px;
+  background: url('../images/f-logo.svg') no-repeat center;
+  background-size: cover;
+  text-indent: -9999px;
+}
+
+.company-info .jyg-info {
+  position: relative;
+  display: block;
+  color: #212121;
+  line-height: 23px;
+  font-size: 13px;
+  margin: 16px 0;
+}
+.jyg-info a {
+  color: #4bb8ce;
+}
+.f-bar {
+  margin:0 5px;
+}
+.company-info .copyright {
+  position: relative;
+  display: block;
+  margin-top: 29px;
+  font-size: 12px;
+}
+
+.bottom-right {
+  position: relative;
+  display: block;
+  text-align: right;
+  line-height: 1;
+}
+
+.bottom-right .cs {
+  position: relative;
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.bottom-right .phone {
+  position: relative;
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.bottom-right .open-time {
+  position: relative;
+  display: block;
+  color: #757575;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.bottom-right .kakao-email {
+  position: relative;
+  display: block;
+  margin-top: 9px;
+  font-size: 13px;
+}
+
+.bottom-right .kakao-email p {
+  position: relative;
+  display: block;
+  line-height: 20px;
+}
+
+.bottom-right .kakao-email p a {
+  position: relative;
+  display: inline-block;
+  color: #4bb8ce;
+}
+
+.bottom-btn {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+}
+
+.bottom-btn button {
+  position: relative;
+  display: block;
+  font-family: Spoqa Han Sans, "Sans-serif";
+  font-weight: 400;
+  width: 88px;
+  height: 32px;
+  font-size: 13px;
+  background: #fff;
+  border: 1px solid #212121;
+  border-radius: 4px;
+  float: left;
+}
+
+.bottom-btn button:first-child {
+  margin-right: 8px;
+}
