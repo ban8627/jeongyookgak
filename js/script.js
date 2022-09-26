@@ -1,32 +1,3 @@
-/*
- 작성자 : 홍길동
- 작성일 : 2022-07-07
- 요구기능 : 
-  1. 참조사이트 : https://www.jeongyookgak.com/
-  2. 베스트 상품 데이터 출력을 위한 사항을 기재하시오.
-  3. 총 데이터 항목 개수는 6개
-  4. 항목별 이름과 구조를 정의하시오.
-*/
-/* case 1
-  제품의 데이터 링크 목록
-  let goodLink = [];
-  제품의 데이터 이미지 목록
-  let goodPic = [];
-*/
-/* case 2
-  객체를 이용한 제품 목록
-  let goodList = [
-    {
-      link:'',
-      pic:'',
-      title:'',
-      price:'',
-      opt1:'',
-      opt2:''
-    },{},
-  ]
-*/
-
 $(document).ready(function () {});
 
 window.onload = function () {
@@ -63,7 +34,20 @@ window.onload = function () {
 
   // best product list
   // product data
-  let bestItems = [{
+  /*
+    [
+      {
+        link(상품링크):'링크주소',
+        pic(상품이미지):'상품이미지 명',
+        title(상품이름):'상품 명',
+        price(상품가격):'상품가격'
+        option(상품무게 /갯수 등):'상품옵션'
+        anti(상품 항생제 여부):''/ 'non-anti' 구분
+      }
+    ]
+  */ 
+  let bestItems = [
+    {
       link: '#',
       pic: 'product_list_01.png',
       title: '돼지 삼겹살 구이용',
@@ -112,16 +96,17 @@ window.onload = function () {
       anti: 'non-anti'
     }
   ]
+  
   let itemDataList = $('.product-con');
   let itemDataPost = '';
 
-  // list 
-  for (let i = 0; i < bestItems.length; i++) {
+  // list 구현
+  for (let i = 0; i < 6; i++) {  // i< 6 상품 갯수 6개 제한
     let itemList = bestItems[i];
     let itemTemp = `<li>
     <div class="product-list ${itemList.anti}">
       <a href="${itemList.link}"><img src="images/${itemList.pic}" alt="" class="item-img"></a>
-      <button class="go-cart"></button>
+      <button class="go-cart" type="submit" value="${itemList.title}" value1="${itemList.pic}" value2="${itemList.price}">장바구니 담기</button>
     </div>
     <h4 class="product-title">초신선 ${itemList.title}</h4>
     <p class="product-value">기준가 ${itemList.price}원/${itemList.option}</p>
@@ -130,4 +115,5 @@ window.onload = function () {
     itemDataPost += itemTemp;
   };
   itemDataList.html(itemDataPost);
+
 };

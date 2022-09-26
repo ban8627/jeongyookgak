@@ -253,6 +253,7 @@ body {
 .visual {
   position: relative;
   display: block;
+  width:100vw;
   height: 560px;
   background: url('../images/main_firstgift_logout.29ecc8b.png') no-repeat center;
   background-size: cover;
@@ -265,8 +266,8 @@ body {
   margin-top: 48px;
 }
 
-/* .notice .inner {} */
-.notice .inner>div {
+/* .notice .inner */
+.notice .inner > div {
   position: relative;
   display: block;
 }
@@ -446,6 +447,7 @@ body {
   background: #fff url('../images/go_cart_b.svg') no-repeat center;
   border: 2px solid #eee;
   box-shadow: 0 25px 10px -15px rgba(0, 0, 0, .1);
+  text-indent: -9999px;
 }
 
 .go-cart:hover {
@@ -477,8 +479,6 @@ body {
   margin-top: 33px;
 }
 
-.contain-banner .inner {}
-
 .contain-banner .cb-banner {
   position: relative;
   display: block;
@@ -503,8 +503,6 @@ body {
   padding: 11px 0;
   border-bottom: 1px solid #eee;
 }
-
-.footer-top .inner {}
 
 .company-law {
   position: relative;
@@ -689,4 +687,93 @@ body {
 
 .bottom-btn button:first-child {
   margin-right: 8px;
+}
+
+@media all and (max-width:1200px) {
+  .top-ad {
+    display: none;
+  }
+  .header .inner {
+    width:100%;
+  }
+  .visual {
+    height:400px;
+  }
+  .notice .inner .notice-left {
+    display: block;
+    width:100%;
+    float: none;
+  }
+  .notice .inner .swiper-slide a {
+    background-size: 656px;
+  }
+  .notice-control {
+    left:90%;
+    transform: translateX(-50%);
+  }
+  .notice .inner .notice-right {
+    position: relative;
+    display: block;
+    margin-top:35px;
+    width: 100%;
+  }
+  .coupon-event-free {
+    background: url('../images/freshplan.a334a34.png') no-repeat center;
+  }
+}
+@media all and (max-width:850px) {
+  .header .inner .customer-area {
+    display: none;
+  }
+  .header .inner .member-area {
+    display: none;
+  }
+  .bar {
+    display: none;
+  }
+  .visual {
+    height:300px;
+  }
+  .product-con li {
+    width:50%;
+    float:left;
+    margin-right:0;
+    margin-bottom:30px;
+  }
+  .product-con .product-list {
+    padding:0;
+    margin:0 auto;
+  }
+  .product-title {
+    width:90%;
+    margin:0 auto;
+  }
+  .product-value {
+    width:90%;
+    margin:0 auto;
+  }
+  .footer {
+    margin-top:50px;
+  }
+  .inner {
+    padding:0 15px !important;
+  }
+}
+@media all and (max-width:550px){
+  .header .inner .header-left .gnb {
+    display: none;
+  }
+  .visual {
+    height:50vh;
+    background-size: 200% 100%;
+  }
+  .product-con li {
+    width:100%;
+  }
+  .contain-banner {
+    display: none;
+  }
+  .footer .app-icons .jyg-apps {
+    display: none;
+  }
 }
